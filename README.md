@@ -11,8 +11,8 @@ $ git clone docker-huboard
 $ cd docker-huboard
 ```
 
-1. mv .env.sample .env
-1. Input your GITHUB_CLIENT_ID and GITHUB_SECRET to .env file(You can
+1. `mv .env.sample .env`
+1. Input your `GITHUB_CLIENT_ID` and `GITHUB_SECRET` to `.env` file(You can
    get these strings from [Github Developer Applications page](https://github.com/settings/applications))
 1. Build Dockerfile.
 
@@ -26,8 +26,8 @@ $ docker build -t nacyot/huboard .
 $ docker run -d -p <PUBLIC_PORT>:5000 nacyot/huboard
 ```
 
-Replace <PUBLIC_PORT> with the number. You can access your huboard
-application on http://127.0.0.1:<PUBLIC_PORT>
+Replace `<PUBLIC_PORT>` with the number. You can access your huboard
+application on `http://127.0.0.1:<PUBLIC_PORT>`
 
 ## nginx proxy setting
 ```nginx
@@ -47,7 +47,7 @@ server {
 }
 ```
 
-If 502 bad gateway error happen, add these settings to nginx.conf.
+If 502 bad gateway error happen, add these settings to `nginx.conf`.
 
 ```nginx
 http {
