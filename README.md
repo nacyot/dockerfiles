@@ -7,7 +7,7 @@ This is Dockerfile for building [Huboard](https://github.com/rauhryan/huboard) a
 1. Clone this repository.
 
 ```sh
-$ git clone docker-huboard
+$ git clone https://github.com/nacyot/docker-huboard.git
 $ cd docker-huboard
 ```
 
