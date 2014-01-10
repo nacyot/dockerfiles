@@ -8,16 +8,11 @@ RUN apt-get update
 # Install basic packages
 RUN apt-get -qq -y install git curl build-essential
 
-# Install packages for building Ruby
-RUN apt-get -qq -y install zlib1g-dev libyaml-dev libssl-dev libgdbm-dev libreadline-dev libncurses5-dev libffi-dev libxml2-dev libxslt-dev libcurl4-openssl-dev libicu-dev
-
-# Install Ruby
-RUN mkdir /tmp/ruby;\
-  cd /tmp/ruby;\
-  curl ftp://ftp.ruby-lang.org/pub/ruby/2.0/ruby-2.0.0-p353.tar.gz | tar xz;\
-  cd ruby-2.0.0-p353;\
-  chmod +x configure;\
-  ./configure --disable-install-rdoc; make; make install
+# Install Ruby 2.0
+RUN apt-get -qq -y install python-software-properties
+RUN apt-add-repository ppa:brightbox/ruby-ng
+RUN apt-get update
+RUN apt-get -qq -y install ruby2.0 ruby2.0-dev
 RUN gem install bundler --no-ri --no-rdoc
 
 # Install packages for installing Huboard 
