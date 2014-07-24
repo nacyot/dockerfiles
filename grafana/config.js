@@ -3,13 +3,13 @@ define(['settings'],
            "use strict";
            
            return new Settings({
-               elasticsearch: "ES_API_HOST:ES_API_PORT",
+               elasticsearch: "http://ES_API_HOST:ES_API_PORT",
                datasources: {
                  graphite: {
                    type: 'graphite',
-                   url: 'GRAPHITE_API_HOST:GRAPHITE_API_PORT',
+                   url: 'http://GRAPHITE_API_HOST:GRAPHITE_API_PORT',
                    default: true,
-                   render_method: 'POST'
+                   render_method: 'GET'
                  }
                },
                default_route: '/dashboard/file/default.json',
