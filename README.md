@@ -9,6 +9,14 @@ The image based on this Dockerfile has [hubot][hubot] and [hubot-simple-logger][
 
 # Running Image with slack adapter
 
+## Setup Slack Hubot Integration
+
+![Slack](http://i.imgur.com/Kf6Yx4g.png)
+
+First, you need to activate hubot integraiton on slack, and set the address of your hubot server.
+
+## Run Image
+
 ```
 # Run redis image
 $ docker run -d --name redis -p 6379:6379 dockerfile/redis
