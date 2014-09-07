@@ -2,7 +2,10 @@
 
 Dockerfile for hubot-simple-logger.
 
-The image based on this Dockerfile has hubot and hubot-simple-logger.
+The image based on this Dockerfile has [hubot][hubot] and [hubot-simple-logger][logger].
+
+[hubot]: https://github.com/github/hubot
+[logger]: https://github.com/anarcher/hubot-simple-logger/
 
 # Running Image with slack adapter
 
@@ -24,7 +27,9 @@ $ docker run -d \
     nacyot/hubot-simple-logger \
 ```
 
-You can get these values from slack integration page(like https://<TEAM_NAME>.slack.com/services/new).
+You can get these values from [Slack][slack] integration page(like https://<TEAM_NAME>.slack.com/services/new).
+
+[slack]: http://slack.com
 
 ## Environment Variables
 
@@ -53,9 +58,9 @@ data.tar
 
 Slack room.
 
-![](http://i.imgur.com/JdXxc6s.png)
+![Slack chat room](http://i.imgur.com/JdXxc6s.png)
 
 This is logger web page(default port 8086).
 
-![](http://i.imgur.com/R4C83jf.png)
+![hubot simple logger web page](http://i.imgur.com/R4C83jf.png)
 
