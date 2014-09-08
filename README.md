@@ -32,10 +32,10 @@ $ docker run -d \
     -e HUBOT_SLACK_TEAM=<SLACK_TEAM_NAME> \
     -e HUBOT_SLACK_BOTNAME=<BOTNAME_ON_SLACK> \
     --volumes-from logger-storage \
-    nacyot/hubot-simple-logger \
+    nacyot/hubot-simple-logger
 ```
 
-You can get these values from [Slack][slack] integration page(like https://<TEAM_NAME>.slack.com/services/new).
+You can get these values from [Slack][slack] integration page(like `https://<TEAM_NAME>.slack.com/services/new`).
 
 [slack]: http://slack.com
 
