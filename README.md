@@ -19,19 +19,20 @@ First, you need to activate hubot integraiton on slack, and set the address of y
 
 ```
 # Run redis image
-$ docker run -d --name redis -p 6379:6379 dockerfile/redis
+$ sudo docker run -d --name redis -p 172.17.42.1:6379:6379 dockerfile/redis
 
 # Run volume container for data prsistence
-$ docker run --name logger-storage -v /data busybox
+$ sudo docker run --name logger-storage -v /data busybox
 
 # Run main image
-$ docker run -d \
+$ sudo docker run -d \
     -p 8080:8080 \
     -p 8086:8086 \
     -e HUBOT_SLACK_TOKEN=<SLACK_TOKEN> \
     -e HUBOT_SLACK_TEAM=<SLACK_TEAM_NAME> \
     -e HUBOT_SLACK_BOTNAME=<BOTNAME_ON_SLACK> \
     --volumes-from logger-storage \
+    --name hubot-simple-logger \
     nacyot/hubot-simple-logger
 ```
 
@@ -54,7 +55,7 @@ TZ=Asia/Seoul                                # Timezone
 # Backup
 
 ```
-$ docker run --volumes-from logger-storage:ro \
+$ sudo docker run --volumes-from logger-storage:ro \
     -v $(pwd):/backup \
     ubuntu:14.04 \
     tar cvf /backup/data.tar /data
