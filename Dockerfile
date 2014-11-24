@@ -1,12 +1,12 @@
 FROM dockerfile/nodejs
 
 # Install base packages
-RUN npm install -g hubot coffee-script redis
+RUN npm install -g hubot coffee-script redis yo generator-hubot
+
+ADD ./slack /root/slack
 
 # Create new hubot and setup for slack. And install hubot-simple-logger
-RUN cd /root && \
-      hubot --create slack && \
-      cd slack && \
+RUN cd /root/slack && \
       npm install hubot-slack hubot-simple-logger --save && \
       npm install && \
       echo '["hubot-simple-logger"]' > external-scripts.json
