@@ -7,7 +7,7 @@ ADD ./slack /root/slack
 
 # Create new hubot and setup for slack. And install hubot-simple-logger
 RUN cd /root/slack && \
-      npm install hubot-slack hubot-simple-logger tempus --save && \
+      npm install hubot-slack@latest hubot-simple-logger tempus --save && \
       npm install && \
       echo '["hubot-simple-logger"]' > external-scripts.json && \
       sed -i -e 's/"Tempus"/"tempus"/g' ./node_modules/hubot-simple-logger/src/scripts/hubot-simple-logger.coffee
